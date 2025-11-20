@@ -1,10 +1,19 @@
 {
   "version": 2,
-  "routes": [
-    { "src": "/realty_careers", "dest": "/realty_careers.html" },
-    { "src": "/about", "dest": "/about.html" },
-    { "src": "/", "dest": "/realty.html" }
-  ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { 
+      "source": "/realty_careers", 
+      "destination": "/realty_careers.html" 
+    },
+    { 
+      "source": "/about", 
+      "destination": "/about.html" 
+    },
+    { 
+      "source": "/", 
+      "destination": "/realty.html" 
+    }
+  ]
 }
