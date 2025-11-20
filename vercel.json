@@ -1,16 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "**/*.html",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "."
-      }
-    }
-  ],
   "routes": [
     { "src": "/realty_careers", "dest": "/realty_careers.html" },
+    { "src": "/about", "dest": "/about.html" },
     { "src": "/", "dest": "/realty.html" }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
