@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact RealtyCapitalVA</title>
+    <meta name="description" content="Get in touch with the RealtyCapitalVA operations team to discuss your leverage needs.">
+    
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Interactivity Engine (Alpine.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Fonts: Cinzel (Luxury Serif) & Inter (Clean Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght[300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Configuration for RealtyCapitalVA Brand -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldLight: '#F4D06F',
+                            goldDark: '#aa8c2c',
+                            black: '#050505',
+                            charcoal: '#121212',
+                            gray: '#2A2A2A',
+                        }
+                    },
+                    backgroundImage: {
+                        'luxury-gradient': 'linear-gradient(to bottom, rgba(5,5,5,0) 0%, rgba(5,5,5,1) 100%)',
+                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F4D06F 50%, #aa8c2c 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Styles */
+        body { background-color: #050505; color: #f3f4f6; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .text-gold-gradient {
+            background: linear-gradient(to right, #D4AF37, #F4D06F, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+    </style>
+</head>
+<body x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+
+    <!-- NAVIGATION BAR (Re-used from index.html) -->
+    <nav :class="scrolled ? 'bg-brand-black/90 backdrop-blur-xl border-b border-white/10' : 'bg-transparent border-transparent'" class="fixed w-full z-50 transition-all duration-300 top-0">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex flex-col leading-none group">
+                <div class="text-2xl font-serif tracking-wider text-white">
+                    <span class="font-bold">REALTY</span><span class="font-light text-brand-gold">CAPITAL</span><span class="font-thin text-gray-500">VA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 text-xs font-medium tracking-[0.2em] uppercase text-gray-400">
+                <a href="index.html#expertise" class="hover:text-brand-gold transition duration-300">Expertise</a>
+                <a href="index.html#process" class="hover:text-brand-gold transition duration-300">Process</a>
+                <a href="index.html#pricing" class="hover:text-brand-gold transition duration-300">Investment</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="contact.html" class="bg-brand-gold hover:bg-white text-brand-black hover:text-brand-black px-6 py-2.5 text-xs font-bold tracking-widest uppercase transition duration-300 border border-brand-gold">
+                    Partner With Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden absolute top-20 left-0 w-full bg-brand-charcoal border-b border-white/10 p-6 flex flex-col space-y-6 text-center shadow-2xl">
+            <a href="index.html#expertise" @click="mobileMenuOpen = false" class="text-sm tracking-widest text-white">EXPERTISE</a>
+            <a href="index.html#process" @click="mobileMenuOpen = false" class="text-sm tracking-widest text-white">PROCESS</a>
+            <a href="index.html#pricing" @click="mobileMenuOpen = false" class="text-sm tracking-widest text-white">PRICING</a>
+            <a href="contact.html" @click="mobileMenuOpen = false" class="text-brand-gold text-sm font-bold tracking-widest">BOOK CONSULTATION</a>
+        </div>
+    </nav>
+
+    <!-- HEADER BLOCK -->
+    <header class="pt-40 pb-24 bg-brand-charcoal border-b border-white/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="font-serif text-5xl md:text-7xl text-white mb-6">
+                Connect with <span class="text-gold-gradient">Operations.</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Whether you're ready for onboarding or simply have a quick question, we are ready to assist.
+            </p>
+        </div>
+    </header>
+
+    <!-- CONTACT DETAILS & FORM -->
+    <section class="py-32 bg-brand-black">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="space-y-12">
+                    <div>
+                        <h2 class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">General Inquiries</h2>
+                        <a href="mailto:info@thehuman.capital" class="text-xl text-white hover:text-brand-gold transition">info@thehuman.capital</a>
+                        <p class="text-sm text-gray-500 mt-2">Best for quick questions about services or partnerships.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">Direct Phone Line</h2>
+                        <p class="text-xl text-white">(888) 555-0101</p>
+                        <p class="text-sm text-gray-500 mt-2">Available Mon-Fri, 9am - 5pm EST.</p>
+                    </div>
+                    
+                    <div class="pt-6 border-t border-white/10">
+                        <h2 class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">Our Global Headquarters</h2>
+                        <p class="text-white text-base">
+                            The Human Capital <br>
+                            123 Luxury Tower, Suite 100 <br>
+                            Miami, FL 33131
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Intake Form -->
+                <div>
+                    <h2 class="font-serif text-3xl text-white mb-6">Schedule an Intake Session</h2>
+                    <form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ENDPOINT" method="POST" class="text-left space-y-6 bg-brand-charcoal p-8 md:p-8 border border-white/5 shadow-2xl">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">First Name</label>
+                                <input type="text" name="first_name" class="w-full bg-black/50 border border-white/10 p-4 text-white focus:outline-none focus:border-brand-gold transition" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Last Name</label>
+                                <input type="text" name="last_name" class="w-full bg-black/50 border border-white/10 p-4 text-white focus:outline-none focus:border-brand-gold transition" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Email Address</label>
+                            <input type="email" name="email" class="w-full bg-black/50 border border-white/10 p-4 text-white focus:outline-none focus:border-brand-gold transition" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Primary Need</label>
+                            <select name="primary_need" class="w-full bg-black/50 border border-white/10 p-4 text-white focus:outline-none focus:border-brand-gold transition appearance-none">
+                                <option>Transaction Coordination</option>
+                                <option>Lead Nurturing (ISA)</option>
+                                <option>Marketing Support</option>
+                                <option>Full Operations</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-gold text-brand-black font-bold uppercase tracking-widest py-5 hover:bg-white transition duration-300 mt-6">
+                            Request Discovery Call
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Re-used from index.html) -->
+    <footer class="bg-black pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+                <div class="text-center md:text-left">
+                    <div class="text-2xl font-serif tracking-wider text-white mb-4">
+                        <span class="font-bold">REALTY</span><span class="font-light text-brand-gold">CAPITAL</span><span class="font-thin text-gray-500">VA</span>
+                    </div>
+                    <p class="text-gray-600 text-sm max-w-xs">
+                        The premier virtual staffing solution for high-performance real estate teams.
+                    </p>
+                </div>
+                
+                <div class="flex gap-12 text-sm text-gray-500">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-white font-bold uppercase tracking-widest text-xs">Company</span>
+                        <a href="about.html" class="hover:text-brand-gold transition">About</a>
+                        <a href="careers.html" class="hover:text-brand-gold transition">Careers</a>
+                        <a href="contact.html" class="hover:text-brand-gold transition">Contact</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-white font-bold uppercase tracking-widest text-xs">Legal</span>
+                        <a href="privacy.html" class="hover:text-brand-gold transition">Privacy</a>
+                        <a href="terms.html" class="hover:text-brand-gold transition">Terms</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-700 text-xs">&copy; 2026 RealtyCapitalVA. All rights reserved.</p>
+                <div class="flex items-center gap-2 opacity-50 hover:opacity-100 transition">
+                    <span class="text-xs text-gray-600 uppercase tracking-widest">A Division of</span>
+                    <span class="text-sm font-serif text-white font-bold">THE HUMAN CAPITAL</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

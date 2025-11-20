@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - RealtyCapitalVA</title>
+    <meta name="description" content="Official Privacy Policy for RealtyCapitalVA regarding data collection and usage.">
+    
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Interactivity Engine (Alpine.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Fonts: Cinzel (Luxury Serif) & Inter (Clean Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght[300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Configuration for RealtyCapitalVA Brand -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldLight: '#F4D06F',
+                            goldDark: '#aa8c2c',
+                            black: '#050505',
+                            charcoal: '#121212',
+                            gray: '#2A2A2A',
+                        }
+                    },
+                    backgroundImage: {
+                        'luxury-gradient': 'linear-gradient(to bottom, rgba(5,5,5,0) 0%, rgba(5,5,5,1) 100%)',
+                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F4D06F 50%, #aa8c2c 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Styles */
+        body { background-color: #050505; color: #f3f4f6; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .text-gold-gradient {
+            background: linear-gradient(to right, #D4AF37, #F4D06F, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+    </style>
+</head>
+<body x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+
+    <!-- NAVIGATION BAR (Re-used from index.html) -->
+    <nav :class="scrolled ? 'bg-brand-black/90 backdrop-blur-xl border-b border-white/10' : 'bg-transparent border-transparent'" class="fixed w-full z-50 transition-all duration-300 top-0">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex flex-col leading-none group">
+                <div class="text-2xl font-serif tracking-wider text-white">
+                    <span class="font-bold">REALTY</span><span class="font-light text-brand-gold">CAPITAL</span><span class="font-thin text-gray-500">VA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 text-xs font-medium tracking-[0.2em] uppercase text-gray-400">
+                <a href="index.html#expertise" class="hover:text-brand-gold transition duration-300">Expertise</a>
+                <a href="index.html#process" class="hover:text-brand-gold transition duration-300">Process</a>
+                <a href="index.html#pricing" class="hover:text-brand-gold transition duration-300">Investment</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="contact.html" class="bg-brand-gold hover:bg-white text-brand-black hover:text-brand-black px-6 py-2.5 text-xs font-bold tracking-widest uppercase transition duration-300 border border-brand-gold">
+                    Partner With Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden absolute top-20 left-0 w-full bg-brand-charcoal border-b border-white/10 p-6 flex flex-col space-y-6 text-center shadow-2xl">
+            <a href="index.html#expertise" @click="mobileMenuOpen = false" class="text-sm tracking-widest text-white">EXPERTISE</a>
+            <a href="index.html#process" @click="mobileMenuOpen = false" class="text-sm tracking-widest text-white">PROCESS</a>
+            <a href="index.html#pricing" @click="mobileMenuOpen = false" class="text-sm tracking-widest text-white">PRICING</a>
+            <a href="contact.html" @click="mobileMenuOpen = false" class="text-brand-gold text-sm font-bold tracking-widest">BOOK CONSULTATION</a>
+        </div>
+    </nav>
+
+    <!-- HEADER BLOCK -->
+    <header class="pt-40 pb-24 bg-brand-charcoal border-b border-white/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="font-serif text-5xl md:text-7xl text-white mb-6">
+                Privacy <span class="text-gold-gradient">Policy.</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Your privacy and trust are paramount. This document outlines how we handle your personal information.
+            </p>
+        </div>
+    </header>
+
+    <!-- CONTENT SECTION (Policy Text) -->
+    <section class="py-32 bg-brand-black">
+        <div class="max-w-4xl mx-auto px-6 text-gray-400 space-y-12">
+            
+            <p class="text-sm text-gray-500 italic">Effective Date: October 1, 2025</p>
+
+            <article class="space-y-6">
+                <h2 class="text-brand-gold text-2xl font-serif">1. Information We Collect</h2>
+                <p>
+                    We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our services, when you participate in activities on the website, or otherwise when you contact us.
+                </p>
+                <h3 class="text-white text-lg font-semibold mt-4">Personal Information Provided by You</h3>
+                <p>
+                    The personal information we collect may include the following: names, email addresses, phone numbers, and job titles. This information is primarily collected via our "Request Discovery Call" and "Careers Inquiry" forms.
+                </p>
+            </article>
+
+            <article class="space-y-6">
+                <h2 class="text-brand-gold text-2xl font-serif">2. How We Use Your Information</h2>
+                <p>
+                    We use personal information collected via our website for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>To send you marketing and promotional communications.</li>
+                    <li>To respond to your inquiries and offer services to you.</li>
+                    <li>To facilitate account creation and logon process.</li>
+                    <li>To manage client relationships and provide core services.</li>
+                </ul>
+            </article>
+
+            <article class="space-y-6">
+                <h2 class="text-brand-gold text-2xl font-serif">3. Will Your Information Be Shared With Anyone?</h2>
+                <p>
+                    We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations. We will never sell or rent your personal information to third parties for marketing purposes.
+                </p>
+                <p>
+                    We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.
+                </p>
+            </article>
+
+            <article class="space-y-6">
+                <h2 class="text-brand-gold text-2xl font-serif">4. Policy Updates</h2>
+                <p>
+                    We may update this privacy policy from time to time. The updated version will be indicated by an updated "Effective Date" and the updated version will be effective as soon as it is accessible. We encourage you to review this privacy policy frequently to be informed of how we are protecting your information.
+                </p>
+            </article>
+            
+            <p class="pt-8 border-t border-white/10 text-center text-sm text-gray-600">
+                If you have questions or comments about this policy, you may email us at <a href="mailto:info@thehuman.capital" class="text-brand-gold hover:text-white">info@thehuman.capital</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER (Re-used from index.html) -->
+    <footer class="bg-black pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+                <div class="text-center md:text-left">
+                    <div class="text-2xl font-serif tracking-wider text-white mb-4">
+                        <span class="font-bold">REALTY</span><span class="font-light text-brand-gold">CAPITAL</span><span class="font-thin text-gray-500">VA</span>
+                    </div>
+                    <p class="text-gray-600 text-sm max-w-xs">
+                        The premier virtual staffing solution for high-performance real estate teams.
+                    </p>
+                </div>
+                
+                <div class="flex gap-12 text-sm text-gray-500">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-white font-bold uppercase tracking-widest text-xs">Company</span>
+                        <a href="about.html" class="hover:text-brand-gold transition">About</a>
+                        <a href="careers.html" class="hover:text-brand-gold transition">Careers</a>
+                        <a href="contact.html" class="hover:text-brand-gold transition">Contact</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-white font-bold uppercase tracking-widest text-xs">Legal</span>
+                        <a href="privacy.html" class="hover:text-brand-gold transition">Privacy</a>
+                        <a href="terms.html" class="hover:text-brand-gold transition">Terms</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-700 text-xs">&copy; 2026 RealtyCapitalVA. All rights reserved.</p>
+                <div class="flex items-center gap-2 opacity-50 hover:opacity-100 transition">
+                    <span class="text-xs text-gray-600 uppercase tracking-widest">A Division of</span>
+                    <span class="text-sm font-serif text-white font-bold">THE HUMAN CAPITAL</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

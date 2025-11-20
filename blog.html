@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | RealtyCapitalVA</title>
+    <meta name="description" content="Operational strategies, CRM systems, and lead nurturing tactics for top-producing real estate agents.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- COPYING THE SAME CONFIG FOR CONSISTENCY -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldLight: '#F4D06F',
+                            black: '#050505',
+                            charcoal: '#121212',
+                            gray: '#2A2A2A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: #f3f4f6; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+
+    <!-- NAVIGATION (Identical to Home) -->
+    <nav :class="scrolled ? 'bg-brand-black/90 backdrop-blur-xl border-b border-white/10' : 'bg-brand-black border-b border-white/10'" class="fixed w-full z-50 transition-all duration-300 top-0">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex flex-col leading-none group">
+                <div class="text-2xl font-serif tracking-wider text-white">
+                    <span class="font-bold">REALTY</span><span class="font-light text-brand-gold">CAPITAL</span><span class="font-thin text-gray-500">VA</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8 text-xs font-medium tracking-[0.2em] uppercase text-gray-400">
+                <a href="index.html#expertise" class="hover:text-brand-gold transition">Expertise</a>
+                <a href="index.html#pricing" class="hover:text-brand-gold transition">Investment</a>
+                <a href="#" class="text-brand-gold transition">Insights</a>
+            </div>
+            <div class="hidden md:block">
+                <a href="index.html#contact" class="bg-brand-gold hover:bg-white text-brand-black px-6 py-2.5 text-xs font-bold tracking-widest uppercase transition duration-300 border border-brand-gold">
+                    Partner With Us
+                </a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div x-show="mobileMenuOpen" class="md:hidden absolute top-20 left-0 w-full bg-brand-charcoal border-b border-white/10 p-6 flex flex-col space-y-6 text-center shadow-2xl">
+            <a href="index.html" class="text-sm tracking-widest text-white">HOME</a>
+            <a href="#" class="text-brand-gold text-sm tracking-widest">INSIGHTS</a>
+        </div>
+    </nav>
+
+    <!-- BLOG HERO -->
+    <header class="pt-40 pb-20 bg-brand-black border-b border-white/5 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-gold/5 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <h1 class="font-serif text-4xl md:text-6xl text-white mb-6">Market <span class="text-brand-gold italic">Intelligence</span></h1>
+            <p class="text-gray-400 max-w-2xl text-lg font-light">
+                Systems, strategies, and operational blueprints for scaling real estate businesses. 
+                <br>Written by our Operations Directors, not AI.
+            </p>
+        </div>
+    </header>
+
+    <!-- CATEGORY FILTER -->
+    <div class="border-b border-white/10 bg-brand-charcoal">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex gap-8 overflow-x-auto hide-scrollbar text-xs font-bold tracking-widest uppercase text-gray-500">
+            <a href="#" class="text-brand-gold border-b border-brand-gold pb-4 -mb-4.5">All Insights</a>
+            <a href="#" class="hover:text-white transition pb-4">Systems Engineering</a>
+            <a href="#" class="hover:text-white transition pb-4">Lead Nurture</a>
+            <a href="#" class="hover:text-white transition pb-4">Market Trends</a>
+            <a href="#" class="hover:text-white transition pb-4">Case Studies</a>
+        </div>
+    </div>
+
+    <!-- CONTENT GRID -->
+    <section class="py-20 bg-brand-black">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- FEATURED ARTICLE (Big Card) -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20 glass-panel p-8 md:p-0 md:border-0 md:bg-transparent">
+                <div class="relative h-64 md:h-96 w-full overflow-hidden rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2070" class="object-cover w-full h-full hover:scale-105 transition duration-700 grayscale hover:grayscale-0">
+                </div>
+                <div class="md:pr-10">
+                    <div class="text-brand-gold text-xs font-bold tracking-widest uppercase mb-4">Systems Engineering</div>
+                    <h2 class="font-serif text-3xl text-white mb-6 leading-tight hover:text-brand-gold transition cursor-pointer">
+                        Why "Speed to Lead" is Failing You (And What to Track Instead)
+                    </h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Most agents obsess over responding in 5 minutes. But data shows that lead *longevity*—not just speed—is the primary driver of GCI in 2025. Here is the 12-touch workflow we install for our clients.
+                    </p>
+                    <a href="#" class="text-white text-xs font-bold tracking-widest uppercase border-b border-brand-gold pb-1 hover:text-brand-gold transition">Read Article</a>
+                </div>
+            </div>
+
+            <!-- STANDARD GRID -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Post 1 -->
+                <div class="group cursor-pointer">
+                    <div class="h-60 w-full overflow-hidden mb-6 relative">
+                        <div class="absolute inset-0 bg-brand-gold/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="text-gray-500 text-[10px] font-bold tracking-widest uppercase mb-3">Transaction Management</div>
+                    <h3 class="font-serif text-xl text-white mb-3 group-hover:text-brand-gold transition">The "Green Sheet" is Dead: Modern Compliance Workflows</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                        Stop using PDF checklists. We break down how to use Dotloop templates to automate 80% of your compliance work.
+                    </p>
+                    <span class="text-brand-gold text-xs font-bold uppercase">Read More &rarr;</span>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="group cursor-pointer">
+                    <div class="h-60 w-full overflow-hidden mb-6 relative">
+                        <div class="absolute inset-0 bg-brand-gold/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="text-gray-500 text-[10px] font-bold tracking-widest uppercase mb-3">Client Experience</div>
+                    <h3 class="font-serif text-xl text-white mb-3 group-hover:text-brand-gold transition">Automating the "Just Closed" Gift Experience</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                        How to use your VA to send personalized closing gifts without you ever touching a shipping label.
+                    </p>
+                    <span class="text-brand-gold text-xs font-bold uppercase">Read More &rarr;</span>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="group cursor-pointer">
+                    <div class="h-60 w-full overflow-hidden mb-6 relative">
+                        <div class="absolute inset-0 bg-brand-gold/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="text-gray-500 text-[10px] font-bold tracking-widest uppercase mb-3">Hiring & Culture</div>
+                    <h3 class="font-serif text-xl text-white mb-3 group-hover:text-brand-gold transition">When to Hire a VA vs. an In-House Assistant</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                        The math is simple. If you are doing under $20M in volume, hiring in-house is a profitability killer. Here is the breakdown.
+                    </p>
+                    <span class="text-brand-gold text-xs font-bold uppercase">Read More &rarr;</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER CTA -->
+    <section class="py-20 bg-brand-charcoal border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-3xl text-white mb-4">Join the "Top 1%" List</h2>
+            <p class="text-gray-400 mb-8">Weekly operational blueprints sent to your inbox. No fluff. Just systems.</p>
+            <form class="flex flex-col md:flex-row gap-4 justify-center">
+                <input type="email" placeholder="Enter your email address" class="bg-black border border-white/10 px-6 py-4 text-white w-full md:w-96 focus:outline-none focus:border-brand-gold transition">
+                <button class="bg-brand-gold text-brand-black font-bold uppercase tracking-widest px-8 py-4 hover:bg-white transition">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER (Simplified) -->
+    <footer class="bg-black py-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <p class="text-gray-700 text-xs">&copy; 2026 RealtyCapitalVA. A Division of The Human Capital.</p>
+            <a href="index.html" class="text-gray-500 hover:text-white text-xs uppercase tracking-widest">Back to Home</a>
+        </div>
+    </footer>
+
+</body>
+</html>
